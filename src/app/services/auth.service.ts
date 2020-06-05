@@ -2,8 +2,8 @@ import * as firebaseui from 'firebaseui';
 import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
+import { environment } from '../../environments/environment'
+firebase.initializeApp(environment.firebase);
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -12,7 +12,8 @@ export class AuthService {
     ) { }
 
     public startUI(element: Element | string): void {
-
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        
         ui.start(element, {
             signInOptions: [
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID
@@ -23,7 +24,7 @@ export class AuthService {
                         if (redirectUrl) {
                             this.router.navigate([redirectUrl]);
                         } else {
-                            this.router.navigate(['/home']);
+                            this.router.navigate(['/']);
                         }
                     })
                     return;
