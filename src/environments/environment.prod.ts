@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  firebaseConfig: {
+  firebase: {
     apiKey: "AIzaSyDAcl0RrVq5wq7nk0OZ6Ef1aNPXSWNccmg",
     authDomain: "trebuno.firebaseapp.com",
     databaseURL: "https://trebuno.firebaseio.com",
