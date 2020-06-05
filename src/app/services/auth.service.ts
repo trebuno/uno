@@ -5,31 +5,31 @@ import { Router } from '@angular/router';
 
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-@Injectable({ providedIn : 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
     constructor(
         private router: Router
-    ) {}
+    ) { }
 
-    public startUI(element : Element | string): void {
-        
+    public startUI(element: Element | string): void {
+
         ui.start(element, {
-            signInOptions: [            
+            signInOptions: [
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID
             ],
             callbacks: {
                 signInSuccessWithAuthResult: (authResult, redirectUrl: string): boolean => {
                     this.saveCredentials(authResult.user).then(() => {
-                        if(redirectUrl){
+                        if (redirectUrl) {
                             this.router.navigate([redirectUrl]);
-                        }else{
+                        } else {
                             this.router.navigate(['/home']);
                         }
                     })
                     return;
                 }
             }
-            
+
         });
     }
 
