@@ -3,19 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyDAcl0RrVq5wq7nk0OZ6Ef1aNPXSWNccmg",
+    authDomain: "trebuno.firebaseapp.com",
+    databaseURL: "https://trebuno.firebaseio.com",
+    projectId: "trebuno",
+    storageBucket: "trebuno.appspot.com",
+    messagingSenderId: "773288457462",
+    appId: "1:773288457462:web:1e5fa925d581c8559b28d7",
+    measurementId: "G-W0MGYX2ZCR"
+  }
 };
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDAcl0RrVq5wq7nk0OZ6Ef1aNPXSWNccmg",
-  authDomain: "trebuno.firebaseapp.com",
-  databaseURL: "https://trebuno.firebaseio.com",
-  projectId: "trebuno",
-  storageBucket: "trebuno.appspot.com",
-  messagingSenderId: "773288457462",
-  appId: "1:773288457462:web:1e5fa925d581c8559b28d7",
-  measurementId: "G-W0MGYX2ZCR"
-};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
